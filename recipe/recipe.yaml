@@ -16,6 +16,8 @@ source:
     - posix-compliant-shell.patch
     # c.f. https://github.com/peraro/ninja/issues/5
     - remove-version-file.patch
+    # Avoid ambiguous std::abs(__float128) overload with GCC 13+ libstdc++
+    - fix-quadruple-abs-overload.patch
 
 build:
   number: 3
