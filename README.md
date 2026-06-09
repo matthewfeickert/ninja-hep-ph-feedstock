@@ -3,6 +3,35 @@ About ninja-hep-ph-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ninja-hep-ph-feedstock/blob/main/LICENSE.txt)
 
+
+About ninja-hep-ph
+------------------
+
+Home: https://github.com/peraro/ninja
+
+Package license: GPL-3.0-only
+
+Summary: Ninja: Automated Integrand Reduction via Laurent Expansion for One-Loop Amplitudes
+
+Development: https://github.com/peraro/ninja
+
+Ninja implements the Laurent series expansion method for the computation of
+one-loop integrals.
+
+It is based on:
+* P. Mastrolia, E. Mirabella and T. Peraro, "_Integrand reduction of
+one-loop scattering amplitudes through Laurent series expansion_,"
+JHEP 1206 (2012) 095
+[arXiv:1203.0291 [hep-ph]](https://arxiv.org/abs/1203.0291)
+DOI: [10.1007/JHEP06(2012)095](https://doi.org/10.1007/JHEP06(2012)095)
+* T. Peraro, "_Ninja: Automated Integrand Reduction via Laurent Expansion
+for One-Loop Amplitudes_," Comput. Phys. Commun. 185 (2014) 2771
+[arXiv:1403.1229 [hep-ph]](http://arxiv.org/abs/1403.1229)
+DOI: [10.1016/j.cpc.2014.06.017](https://doi.org/10.1016/j.cpc.2014.06.017)
+
+About ninja-split
+-----------------
+
 Home: https://github.com/peraro/ninja
 
 Package license: GPL-3.0-only
@@ -30,7 +59,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/ninja-hep-ph-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/ninja-hep-ph-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -44,27 +80,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
@@ -76,6 +91,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -163,12 +185,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -195,7 +217,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/ninja-hep-ph-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
