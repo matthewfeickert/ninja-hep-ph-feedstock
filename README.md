@@ -59,7 +59,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/ninja-hep-ph-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/ninja-hep-ph-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -73,27 +80,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ninja-hep-ph-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24224&branchName=main">
@@ -129,7 +115,6 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ninja--hep--ph-green.svg)](https://anaconda.org/conda-forge/ninja-hep-ph) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ninja-hep-ph.svg)](https://anaconda.org/conda-forge/ninja-hep-ph) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ninja-hep-ph.svg)](https://anaconda.org/conda-forge/ninja-hep-ph) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ninja-hep-ph.svg)](https://anaconda.org/conda-forge/ninja-hep-ph) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ninja--hep--ph--static-green.svg)](https://anaconda.org/conda-forge/ninja-hep-ph-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ninja-hep-ph-static.svg)](https://anaconda.org/conda-forge/ninja-hep-ph-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ninja-hep-ph-static.svg)](https://anaconda.org/conda-forge/ninja-hep-ph-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ninja-hep-ph-static.svg)](https://anaconda.org/conda-forge/ninja-hep-ph-static) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-ninja--split-green.svg)](https://anaconda.org/conda-forge/ninja-split) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ninja-split.svg)](https://anaconda.org/conda-forge/ninja-split) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ninja-split.svg)](https://anaconda.org/conda-forge/ninja-split) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ninja-split.svg)](https://anaconda.org/conda-forge/ninja-split) |
 
 Installing ninja-hep-ph
 =======================
@@ -141,16 +126,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ninja-hep-ph, ninja-hep-ph-static, ninja-split` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ninja-hep-ph, ninja-hep-ph-static` can be installed with `conda`:
 
 ```
-conda install ninja-hep-ph ninja-hep-ph-static ninja-split
+conda install ninja-hep-ph ninja-hep-ph-static
 ```
 
 or with `mamba`:
 
 ```
-mamba install ninja-hep-ph ninja-hep-ph-static ninja-split
+mamba install ninja-hep-ph ninja-hep-ph-static
 ```
 
 It is possible to list all of the versions of `ninja-hep-ph` available on your platform with `conda`:
