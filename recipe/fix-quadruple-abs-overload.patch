@@ -1,0 +1,38 @@
+From b9cd7a045987fb32763aeb297403abe860268ca4 Mon Sep 17 00:00:00 2001
+From: Matthew Feickert <matthew.feickert@cern.ch>
+Date: Tue, 9 Jun 2026 12:00:00 -0600
+Subject: [PATCH] Avoid ambiguous std::abs overload for __float128 with GCC 13+
+
+GCC 13+ libstdc++ provides std::abs(__float128) in <bits/std_abs.h>, which
+collides with ninja's own std::abs(const Quadruple&) (Quadruple is __float128).
+Only define ninja's overload when the standard library does not provide one.
+
+c.f. https://github.com/peraro/ninja/issues/5
+---
+ src/ninja/quadruple.hh | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/ninja/quadruple.hh b/src/ninja/quadruple.hh
+index 484a62a..f0cac8b 100644
+--- a/src/ninja/quadruple.hh
++++ b/src/ninja/quadruple.hh
+@@ -147,10 +147,16 @@ namespace std {
+     return expm1q(x);
+   }
+ 
++  // GCC 13+ libstdc++ provides std::abs(__float128) in <bits/std_abs.h>.
++  // Since Quadruple is __float128, that is an exact match for the overload
++  // below and the two are ambiguous. Only define our own when the standard
++  // library does not already provide it.
++#if !defined(_GLIBCXX_RELEASE) || (_GLIBCXX_RELEASE < 13)
+   inline ninja::Quadruple abs(const ninja::Quadruple & r)
+   {
+     return fabsq (r);
+   }
++#endif
+ 
+   inline ninja::Quadruple fabs (const ninja::Quadruple & x)
+   {
+-- 
+2.54.0
+
